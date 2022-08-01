@@ -1,4 +1,4 @@
-import "./player.css"
+import "./mediaplayer.css"
 
 import MediaPlayer from "./MediaPlayer";
 import Library from "./Library";

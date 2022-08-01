@@ -1,4 +1,4 @@
-import "./player.css"
+import "./mediaplayer.css"
 const Media = () => {
     return (
         <div className="media-container"></div>

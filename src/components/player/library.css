@@ -1,0 +1,59 @@
+.librarylinetitle { 
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 30px;
+    font-size: 12px;
+    background-color: rgb(247, 36, 91, 0.2);
+    text-align: center;
+    color: white;
+    border-bottom: 2px solid white;
+    margin-bottom: 30px;
+    
+}
+
+.libraryline{ 
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 30px;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+    color: white;
+    
+}
+.line-number {
+    flex: 1;
+    margin: auto;
+    cursor: pointer;
+}
+
+.song-name {
+    flex: 9;
+    margin: auto;
+    cursor: pointer;
+}
+
+.time {
+    flex: 3;
+    margin: auto;
+    cursor: pointer;
+}
+
+.artist {
+    flex: 5;
+    margin: auto;
+    cursor: pointer;
+}
+
+.album {
+    flex: 4;
+    margin: auto;
+    cursor: pointer;
+}
+
+.library {
+    height: 100%;
+    background-color: rgb(64,64,64,0.4);
+}

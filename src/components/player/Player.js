@@ -1,4 +1,4 @@
-import './player.css'
+import './mediaplayer.css'
 
 import WebPlayer from './WebPlayer';
 import Media from './Media';
