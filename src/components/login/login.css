@@ -1,0 +1,123 @@
+.background {
+    height: 100%; /*height of current browser window*/
+    width: 100%; /*width of current browser window*/
+    display: flex; /*make a flexbox*/
+    flex-direction: row; /*children will be stacked horizontally NOTE: THIS FLIPS RELATIVITY*/
+    background-color: black;
+    z-index: -3;
+}
+
+#login-attract-mode {
+    flex: 4;
+    display: flex;
+    justify-content: center;
+}
+
+#login-video {
+    width: 10000%;
+    z-index: 1;
+}
+
+#login-box {
+    flex: 5;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    z-index: 2;
+}
+
+#site-title {
+    flex: 1;
+    display: flex;
+    padding-left: 60px;
+    align-items: center;
+    background-color: rgba(165,58,241,.35);
+}
+
+#login-area {
+    flex: 3;
+    background-color: rgba(165,58,241,.35);
+    padding-left: 60px;
+    
+}
+
+#login-form {
+    margin-top: 70px;
+    z-index: 2;
+}
+
+h1 {
+    color: white;
+    font-size: 50px;
+    margin: 0;
+}
+
+.login-btn {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0px;
+    border: none;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 30px;
+    background: #80DEF3;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    width: 200px;
+    height: 75px;
+    margin-top: 50px;
+    cursor: pointer;
+}
+  
+.login-btn:hover {
+    background: #ffffff;
+    text-decoration: none;
+    color: rgba(344, 85, 96, 1);
+}
+
+
+.forgot-btn {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0px;
+    border: none;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 15px;
+    background: rgba(96, 58, 241, 1);
+    padding: 5px 5px 5px 5px;
+    text-decoration: none;
+    width: 400px;
+    height: 25px;
+    margin-top: 25px;
+    cursor: pointer;
+}
+
+.forgot-btn:hover {
+    background: #ffffff;
+    text-decoration: none;
+    color: rgba(344, 85, 96, 1);
+}
+
+#login-form > form > label:nth-child(1) {
+    color: white;
+}
+
+#login-form > form > label:nth-child(7) {
+    color: white;
+}
+
+input[type=text], input[type=password] {   
+    width: 75%;   
+    margin: 8px 0;  
+    padding: 12px 20px;   
+    display: inline-block;   
+    border: 2px solid white;   
+    box-sizing: border-box;   
+    font-size: 15px;
+}  
+
+#remember-login {
+    font-size: 15px;
+    color:white
+}
