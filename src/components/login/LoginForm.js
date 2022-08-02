@@ -1,8 +1,11 @@
 import React, {useState, useEffect} from "react";
+import { useHistory } from "react-router-dom";
 import './login.css'
 
-const LoginForm = () => {
+const LoginForm = ({handleId}) => {
     const [users, setUsers] = useState([]);
+
+    const history = useHistory();
 
     useEffect ( () => {
         const fetchData = async () => {
@@ -18,20 +21,30 @@ const LoginForm = () => {
         for (let a=0; a<users.length; a++){
             if(users[a]['username'] === username && users[a]['password'] === password){
                 console.log('true');
+                handleId(users[a]['id']); //set user id
                 return true;
             }
         }
         return false;
     }
 
-
-
-
+    const handleLogIn = (event) => {
+        event.preventDefault();
+        const temp_usr_name = event.target['username'].value;
+        const temp_usr_pass = event.target['password'].value;
+        if (checkUser(temp_usr_name,temp_usr_pass)) {
+            console.log('true')
+            history.push(`/player`)
+            //valid login, route with appropriate id 
+        } else {
+            alert('Invalid Username or Password');
+        }
+    }
 
 
     return (
         <div id="login-form">
-            <form>
+            <form onSubmit={handleLogIn}>
                 <label className="login-label-form">Username:</label>
                                                 <br/> {/*Not ideal, but it'll have to do*/}
                 <span>

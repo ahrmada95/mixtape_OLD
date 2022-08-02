@@ -6,7 +6,7 @@ import LoginVideo from "./LoginVideo";
 import LoginForm from "./LoginForm";
 import Forgot from "./Forgot";
 
-const Login = () => {
+const Login = ({handleId}) => {
     return (
         <div className="background">
             <LoginVideo />
@@ -15,7 +15,7 @@ const Login = () => {
                     <h1>Log into MixTape</h1>
                 </div>
                 <div id="login-area">
-                    <LoginForm />
+                    <LoginForm handleId={handleId}/>
                     <Forgot />
                 </div>
             </div>
