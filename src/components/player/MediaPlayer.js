@@ -30,17 +30,6 @@ const MediaPlayer = ({songId, prevSong, nextSong}) => {
         nextSong();
     };
 
-    const prev = () => {
-        mp3Player.current.pause();
-        mp3Player.current.time = 0;
-        prevSong();
-    };
-    const next = () => {
-        mp3Player.current.pause();
-        mp3Player.current.time = 0;
-        nextSong();
-    };
-
     //set the time to the audio element’s time value in seconds.
     const onPlaying = () => {
         setcurrentTime(mp3Player.current.currentTime);
