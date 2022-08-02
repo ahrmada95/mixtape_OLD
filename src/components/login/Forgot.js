@@ -1,6 +1,9 @@
 const Forgot = () => {
+    const sucks = () => {
+        alert("Wow, that sucks.")
+    }
     return (
-        <button className="forgot-btn">Forgot username or password?</button>
+        <button onClick={sucks} className="forgot-btn">Forgot username or password?</button>
     )
 }
 
