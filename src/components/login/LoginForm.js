@@ -2,8 +2,8 @@ import React, {useState, useEffect} from "react";
 import { useHistory } from "react-router-dom";
 import './login.css'
 
-const LoginForm = ({handleId}) => {
-    const [users, setUsers] = useState([]);
+const LoginForm = ({setUserId}) => {
+    const [users, setUsers] = useState([]); //list of all users
 
     const history = useHistory();
 
@@ -21,7 +21,7 @@ const LoginForm = ({handleId}) => {
         for (let a=0; a<users.length; a++){
             if(users[a]['username'] === username && users[a]['password'] === password){
                 console.log('true');
-                handleId(users[a]['id']); //set user id
+                setUserId(users[a]['id']); //set user id
                 return true;
             }
         }

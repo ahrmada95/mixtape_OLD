@@ -12,10 +12,10 @@ function App() {
   return (
     <div>
       <Route exact path="/">
-        <Login handleId={handleId}/>
+      <Login setUserId={setUserId}/>
       </Route>
       <Route exact path="/player">
-        <Player />
+        <Player userId={user_id}/>
       </Route>
     </div>
   );
