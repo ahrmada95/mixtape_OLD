@@ -3,7 +3,7 @@ import {useRef, useState} from "react";
 
 const MediaPlayer = () => {
     const mp3Player = useRef();
-    const [time, setTime] = useState(0);
+    const [currentTime, setcurrentTime] = useState(0);
     const [updateValue, setUpdateValue] = useState(0);
 
     const play = () => {
@@ -16,14 +16,14 @@ const MediaPlayer = () => {
 
     const stop = () => {
         mp3Player.current.pause();
-        mp3Player.current.time = 0;
+        mp3Player.current.currentTime = 0;
     };
 
-    //set the time to the audio element’s time value in seconds.
+    //set the currentTime to the audio element’s currentTime value in seconds.
     const onPlaying = () => {
-        setTime(mp3Player.current.time);
+        setcurrentTime(mp3Player.current.currentTime);
         setUpdateValue(
-        (mp3Player.current.time / mp3Player.current.duration) * 100
+        (mp3Player.current.currentTime / mp3Player.current.duration) * 100
         );
     }; 
 
@@ -33,8 +33,8 @@ const MediaPlayer = () => {
         "album": "THE ANSWER - Armored Core Tribute Album",
         "albumArt": "./music/album_art/armored_core_tribute.jpg",
         "artist": "Mattias Häggström Gerdt",
-        "time": 223000,
-        "src": "./music/Morning,Thinker.mp3"
+        "currentTime": 223000,
+        "src": "./music/Morning, Thinker.mp3"
       }
 
     return (
@@ -48,10 +48,11 @@ const MediaPlayer = () => {
                 <div className='album-art'>
                     <img src={`${song.albumArt}`} className='curr-album-cover'/>
                     <audio
-                        src={"http://localhost:3000/music/Morning,Thinker.mp3"}
+                        src={`${song.src}`}
                         ref={mp3Player}
                         onTimeUpdate={onPlaying} />
                     <br/>
+                    <p>{currentTime}</p>
                     <input
                         type="range"
                         min="0"
@@ -60,7 +61,7 @@ const MediaPlayer = () => {
                         value={updateValue}
                         onChange={(e) => {
                         const seekto = mp3Player.current.duration * (e.target.value / 100);
-                        mp3Player.current.time = seekto;
+                        mp3Player.current.currentTime = seekto;
                         setUpdateValue(e.target.value);}} />
                 </div>
                 <div className='media-controls'>
