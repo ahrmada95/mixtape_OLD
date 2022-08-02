@@ -38,7 +38,11 @@ const LoginForm = ({handleId}) => {
             //valid login, route with appropriate id 
         } else {
             alert('Invalid Username or Password');
+            
         }
+
+        event.target['username'].value = '';
+        event.target['password'].value = '';
     }
 
 
