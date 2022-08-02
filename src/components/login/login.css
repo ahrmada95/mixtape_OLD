@@ -47,6 +47,12 @@
     background-color: rgba(165,58,241,.35);
 }
 
+.login-icon {
+    position: relative;
+    top: 16px;
+    max-height: 44px;
+}
+
 #login-area {
     flex: 3;
     background-color: rgba(165,58,241,.35);
@@ -163,8 +169,8 @@ input[type=text], input[type=password] {
 }
 
 .login-label-form {
-    font-family: form-label;
     font-size: 20px;
+    align-content: center;
 }
 
 .login-placeholder-form {
