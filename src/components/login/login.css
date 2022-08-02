@@ -1,5 +1,15 @@
+@font-face {
+    font-family: banner-title;
+    src: url("./fonts/Gotham-Bold.otf")
+}
+
+@font-face {
+    font-family: form-label;
+    src: url("./fonts/GothamBook.ttf")
+}
+
 .background {
-    height: 100%; /*height of current browser window*/
+    height: 100vh; /*height of current browser window*/
     width: 100%; /*width of current browser window*/
     display: flex; /*make a flexbox*/
     flex-direction: row; /*children will be stacked horizontally NOTE: THIS FLIPS RELATIVITY*/
@@ -24,6 +34,9 @@
     flex-direction: column;
     height: 100vh;
     z-index: 2;
+    -webkit-animation: slideIn 2s forwards;
+    -moz-animation: slideIn 2s forwards;
+    animation: slideIn 2s forwards;
 }
 
 #site-title {
@@ -38,7 +51,6 @@
     flex: 3;
     background-color: rgba(165,58,241,.35);
     padding-left: 60px;
-    
 }
 
 #login-form {
@@ -46,9 +58,36 @@
     z-index: 2;
 }
 
+@-webkit-keyframes slideIn {
+    0% {
+      transform: translateX(-1000px);
+    }
+    100% {
+      transform: translateX(0px);
+    }
+  }
+  @-moz-keyframes slideIn {
+    0% {
+      transform: translateX(-1000px);
+    }
+    100% {
+      transform: translateX(0px);
+    }
+  }
+  @keyframes slideIn {
+    0% {
+      transform: translateX(1000px);
+    }
+    100% {
+      transform: translateX(0px);
+    }
+  }
+
+
 h1 {
+    font-family: banner-title;
     color: white;
-    font-size: 50px;
+    font-size: 70px;
     margin: 0;
 }
 
@@ -57,7 +96,7 @@ h1 {
     -moz-border-radius: 0;
     border-radius: 0px;
     border: none;
-    font-family: Arial;
+    font-family: banner-title;
     color: #ffffff;
     font-size: 30px;
     background: #80DEF3;
@@ -81,7 +120,7 @@ h1 {
     -moz-border-radius: 0;
     border-radius: 0px;
     border: none;
-    font-family: Arial;
+    font-family: form-label;
     color: #ffffff;
     font-size: 15px;
     background: rgba(96, 58, 241, 1);
@@ -118,6 +157,17 @@ input[type=text], input[type=password] {
 }  
 
 #remember-login {
+    font-family: form-label;
     font-size: 15px;
     color:white
+}
+
+.login-label-form {
+    font-family: form-label;
+    font-size: 20px;
+}
+
+.login-placeholder-form {
+    font-family: form-label;
+    font-size: 18px;
 }

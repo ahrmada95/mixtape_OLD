@@ -5,15 +5,15 @@ const LoginForm = () => {
     return (
         <div id="login-form">
             <form>
-                <label>Username:</label>
+                <label className="login-label-form">Username:</label>
                                                 <br/> {/*Not ideal, but it'll have to do*/}
-                <input type="text" placeholder="👤 Enter Username" name="username" id="user-box"/>
+                <input type="text" className='login-placeholder-form' placeholder="👤 Enter Username" name="username" id="user-box"/>
                                                 <br/>
                                                 <br/>
                                                 <br/>
-                <label>Password:</label>
+                <label className="login-label-form">Password:</label>
                                                 <br/> {/*Not ideal, but it'll have to do*/}
-                <input type="password" placeholder="🔑 Enter Password" name="password" id="pass-box"/>
+                <input type="password" className='login-placeholder-form' placeholder="🔑 Enter Password" name="password" id="pass-box"/>
                                                 <br/>
                                                 <br/>
                 <input type="checkbox" id="remember-login" name="remember-login" value="Bike"/>
