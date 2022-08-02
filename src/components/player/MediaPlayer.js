@@ -30,7 +30,6 @@ const MediaPlayer = ({songId, prevSong, nextSong}) => {
         nextSong();
     };
 
-
     const prev = () => {
         mp3Player.current.pause();
         mp3Player.current.time = 0;
