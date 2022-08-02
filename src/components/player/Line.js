@@ -4,10 +4,10 @@ const LineTitle = () => {
     return (
         <div className="librarylinetitle">
             <div className='line-number'>#</div>
-            <div className='song-name'>SONG</div>
-            <div className='time'>TIME</div>
-            <div className='artist'>ARTIST</div>
-            <div className='album'>ALBUM</div>
+            <div className='song-name'>Song</div>
+            <div className='time'>Time</div>
+            <div className='artist'>Artist</div>
+            <div className='album'>Album</div>
         </div>
     )
 }

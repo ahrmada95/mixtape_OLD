@@ -10,14 +10,15 @@
 .user-page-container {
     height: 100%;
     width: 300px;
-    background-color: rgba(247, 36, 91, 0.45);
+    background-image: linear-gradient(to bottom, #404040, #343239, #2a2430, #221627, #1d021d);
 }
 
 .media-container {
-
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(to bottom, #404040, #313131, #232323, #151515, #000000);
     height: 100%;
     width: 300px;
-    background-color: rgba(128, 222,243, 0.45);
 }
 
 .web-player-container {
