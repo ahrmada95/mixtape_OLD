@@ -98,6 +98,7 @@ h1 {
 }
 
 .login-btn {
+    transition-duration: 0.2s;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0px;
@@ -115,13 +116,15 @@ h1 {
 }
   
 .login-btn:hover {
-    background: #ffffff;
+    transition-duration: 0.2s;
+    background: #226294;
     text-decoration: none;
-    color: rgba(344, 85, 96, 1);
+    color: rgba(165, 58, 2412, 1);
 }
 
 
 .forgot-btn {
+    transition-duration: 0.2s;
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
     border-radius: 0px;
@@ -139,6 +142,7 @@ h1 {
 }
 
 .forgot-btn:hover {
+    transition-duration: 0.2s;
     background: #ffffff;
     text-decoration: none;
     color: rgba(344, 85, 96, 1);

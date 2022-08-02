@@ -1,20 +1,9 @@
-@font-face {
-    font-family: library-liner;
-    src: url("./fonts/GothamLight.ttf")
-}
-
-@font-face {
-    font-family: library-songs;
-    src: url("./fonts/Gotham-XLight.otf")
-
-}
 .librarylinetitle { 
     display: flex;
-    font-family: library-liner;
     flex-direction: row;
     width: 100%;
     height: 30px;
-    font-size: 15px;
+    font-size: 12px;
     background-color: rgb(247, 36, 91, 0.2);
     text-align: center;
     color: white;
@@ -25,11 +14,10 @@
 
 .libraryline{ 
     display: flex;
-    font-family: library-songs;
     flex-direction: row;
     width: 100%;
     height: 30px;
-    font-size: 12px;
+    font-size: 14px;
     text-align: center;
     margin-top: 10px;
     color: white;
@@ -62,7 +50,7 @@
 .album {
     flex: 4;
     margin: auto;
-    cursor: pointer;
+    
 }
 
 .library {
