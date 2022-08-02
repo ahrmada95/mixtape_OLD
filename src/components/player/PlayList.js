@@ -1,6 +1,6 @@
 import PlayListItem from "./PlayListItem";
 
-const PlayList = () => {
+const PlayList = ({playList}) => {
     return (
         <div id="playlist-title"> Your Tapes
             <br/>

@@ -1,8 +1,13 @@
 import './mediaplayer.css'
+import { useEffect } from 'react';
 import {useRef, useState} from "react";
 
-const MediaPlayer = ({songId, prevSong, nextSong}) => {
+const MediaPlayer = ({currSongSrc, currSongArt}) => {
+    //{songId, prevSong, nextSong}
     const mp3Player = useRef();
+
+    const [currSong, setCurrSong] = useState({})
+
     const [currentTime, setcurrentTime] = useState(0);
     const [updateValue, setUpdateValue] = useState(0);
 
@@ -19,16 +24,16 @@ const MediaPlayer = ({songId, prevSong, nextSong}) => {
         mp3Player.current.currentTime = 0;
     };
 
-    const prev = () => {
-        mp3Player.current.pause();
-        mp3Player.current.time = 0;
-        prevSong();
-    };
-    const next = () => {
-        mp3Player.current.pause();
-        mp3Player.current.time = 0;
-        nextSong();
-    };
+    // const prev = () => {
+    //     mp3Player.current.pause();
+    //     mp3Player.current.time = 0;
+    //     prevSong();
+    // };
+    // const next = () => {
+    //     mp3Player.current.pause();
+    //     mp3Player.current.time = 0;
+    //     nextSong();
+    // };
 
     //set the time to the audio element’s time value in seconds.
     const onPlaying = () => {
@@ -57,14 +62,13 @@ const MediaPlayer = ({songId, prevSong, nextSong}) => {
             </div>
             <div className='cover-slide-art'>
                 <div className='album-art'>
-                    <img src={`${song.albumArt}`} className='curr-album-cover'/>
+                    <img src={`${currSongSrc}`} className='curr-album-cover'/>
                     <audio
-                        src={`${song.src}`}
+                        src={`${currSongArt}`}
                         ref={mp3Player}
                         onTimeUpdate={onPlaying} />
-                    <br/>
-                    <p>{currentTime}</p>
-                    <input
+                    <p id='timer-shit'>{currentTime}</p>
+                    <input id='scrubber'
                         type="range"
                         min="0"
                         max="100"

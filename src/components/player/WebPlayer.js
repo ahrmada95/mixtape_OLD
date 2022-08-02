@@ -1,17 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./mediaplayer.css"
 
 import MediaPlayer from "./MediaPlayer";
 import Library from "./Library";
 
-const WebPlayer = () => {
+const WebPlayer = ({currPlayList}) => {  
+
     return (
         <div className="web-player-container">
-            <MediaPlayer/>
-            {/* <MediaPlayer songId={songId} prevSong={prevSong} nextSong={nextSong}/> */}
-            <Library />
+            <MediaPlayer />
+            <Library currPlayList={currPlayList}/>
         </div>
-    )
+    ) 
 }
 
 export default WebPlayer;
