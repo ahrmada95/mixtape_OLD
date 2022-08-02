@@ -2,7 +2,7 @@ import PlayListItem from "./PlayListItem";
 
 const PlayList = () => {
     return (
-        <div id="playlist-title"> Playlists
+        <div id="playlist-title"> Your Tapes
             <br/>
             <div className="playlist-items">
             <div id='add-new'>
