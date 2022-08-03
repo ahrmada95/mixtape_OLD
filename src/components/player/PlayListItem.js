@@ -2,7 +2,7 @@ import "./media.css";
 import { useState,useEffect } from "react";
 import PlayListItemSong from "./PlayListItemSong";
 
-const PlayListItem = ({ playList }) => {
+const PlayListItem = ({ playList, songInfo2, setSongInfo2 }) => {
 
 
     const [playListName,setPlayListName] = useState([])
@@ -25,13 +25,18 @@ const PlayListItem = ({ playList }) => {
         setCollapseSongList((collapseSongList) => !collapseSongList)
     }
 
+
+
+    //console.log(playListName)
     //console.log(playListName.tracks)
     return (
         <div className="playlist-items">
             <img src='./assets/tape_icon.png' className="nav-icon-tape"/>
             <p onClick={handleCollapse}>{playListName.name}</p>
             <ul>{collapseSongList ? null : playlistArray.map((track, index) => {
-                   return <PlayListItemSong key={index} track={track}/>
+                   return <PlayListItemSong key={index} track={track}
+                   songInfo2={songInfo2} setSongInfo2={setSongInfo2}
+                   />
                 })}
                 {/*playlistArray.map((track, index) => {
                    return <PlayListItemSong key={index} track={track}/>

@@ -4,8 +4,8 @@ import {Line, LineTitle} from "./Line";
 const Library = ({currPlayList}) => {
 
     const {tracks} = currPlayList
-        console.log("hi", tracks);
-        console.log(typeof(tracks));
+       // console.log("hi", tracks);
+       // console.log(typeof(tracks));
     return (
         <div className="library">
             <LineTitle />

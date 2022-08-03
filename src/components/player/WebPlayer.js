@@ -4,11 +4,11 @@ import "./mediaplayer.css"
 import MediaPlayer from "./MediaPlayer";
 import Library from "./Library";
 
-const WebPlayer = ({currPlayList}) => {  
+const WebPlayer = ({ currPlayList, songInfo2 }) => {  
 
     return (
         <div className="web-player-container">
-            <MediaPlayer />
+            <MediaPlayer songInfo2={songInfo2}/>
             <Library currPlayList={currPlayList}/>
         </div>
     ) 

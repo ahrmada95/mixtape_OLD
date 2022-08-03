@@ -2,11 +2,11 @@ import './mediaplayer.css'
 import { useEffect } from 'react';
 import {useRef, useState} from "react";
 
-const MediaPlayer = ({currSongSrc, currSongArt}) => {
+const MediaPlayer = ({ songInfo2 }) => {
     //{songId, prevSong, nextSong}
     const mp3Player = useRef();
 
-    const [currSong, setCurrSong] = useState({})
+    //const [currSong, setCurrSong] = useState({})
 
     const [currentTime, setcurrentTime] = useState(0);
     const [updateValue, setUpdateValue] = useState(0);
@@ -62,9 +62,9 @@ const MediaPlayer = ({currSongSrc, currSongArt}) => {
             </div>
             <div className='cover-slide-art'>
                 <div className='album-art'>
-                    <img src={`${currSongSrc}`} className='curr-album-cover'/>
+                    <img src={`${songInfo2.albumArt}`} className='curr-album-cover'/>
                     <audio
-                        src={`${currSongArt}`}
+                        src={`${songInfo2.src}`}
                         ref={mp3Player}
                         onTimeUpdate={onPlaying} />
                     <p id='timer-shit'>{currentTime}</p>

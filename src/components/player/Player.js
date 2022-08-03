@@ -11,6 +11,10 @@ const Player = ({userId_, userName}) => {
     const [currPlayListId, setCurrPlayListId] = useState(0);
     const [currPlayList, setCurrPlayList] = useState(null);
     const [userPlayLists, setUserPlayLists] = useState([]);
+    const [songInfo2, setSongInfo2] = useState([])
+
+
+
 
     useEffect ( () => {
         const fetchPlayList = async() => {
@@ -36,13 +40,15 @@ const Player = ({userId_, userName}) => {
 
     //console.log('UserPlayLists: ', userPlayLists)
 
-
+    console.log('songInfo2', songInfo2)
 
 
     return (
         <div className="body">
-            <WebPlayer currPlayList={currPlayList}/>
-            <Media userPlayLists={userPlayLists}/>
+            <WebPlayer currPlayList={currPlayList} songInfo2={songInfo2}/>
+            <Media userPlayLists={userPlayLists}
+            songInfo2={songInfo2} setSongInfo2={setSongInfo2}
+            />
             <UserPage userId_={userId_} userName={userName}/>
         </div>
     )

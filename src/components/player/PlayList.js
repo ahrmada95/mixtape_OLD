@@ -1,6 +1,6 @@
 import PlayListItem from "./PlayListItem";
 
-const PlayList = ({playList, userPlayLists}) => {
+const PlayList = ({playList, userPlayLists, setSongInfo2, songInfo2}) => {
 
 
 
@@ -15,7 +15,9 @@ const PlayList = ({playList, userPlayLists}) => {
             </div>
         </div>
             {userPlayLists.map((playList, index) => {
-                return <PlayListItem key={index} playList={playList}/>    
+                return <PlayListItem key={index} playList={playList}
+                songInfo2={songInfo2} setSongInfo2={setSongInfo2}
+                />    
             })}
         </div>
     )

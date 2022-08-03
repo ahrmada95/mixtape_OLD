@@ -31,7 +31,7 @@ const UserPage = ({userName, userId_}) => {
     }
 
     //console.log(userInfo.profilePic)
-    console.log(userInfo)
+    //console.log(userInfo)
     return (
         <div className="user-page-container">
             <div>
