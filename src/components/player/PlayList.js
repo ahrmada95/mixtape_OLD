@@ -14,7 +14,7 @@ const PlayList = ({playList, userPlayLists}) => {
                 <img src='./assets/add_button.png' className="nav-icon-small"/> Create New
             </div>
         </div>
-            {userPlayLists.playLists.map((playList, index) => {
+            {userPlayLists.map((playList, index) => {
                 return <PlayListItem key={index} playList={playList}/>    
             })}
         </div>

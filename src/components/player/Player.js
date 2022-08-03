@@ -22,7 +22,7 @@ const Player = ({userId_}) => {
          const fetchPlayList2 = async() => {
             const req = await fetch(`http://localhost:4001/user/info/${userId_}`);
             const res = await req.json();
-            setUserPlayLists(res);
+            setUserPlayLists(res.playLists);
             console.log(res);
         }
         fetchPlayList2();
