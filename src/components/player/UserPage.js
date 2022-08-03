@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 const UserPage = ({userName, userId}) => {
     const history = useHistory()
     const [collapse, setCollapse] = useState(false)
-    const [userInfo, setUserInfo] = useState([])
+    const [userInfo, setUserInfo] = useState(null)
 /*  this fetch request will have to direct the */
     useEffect(() => {
         const fetchUrl = async () => {
@@ -16,8 +16,15 @@ const UserPage = ({userName, userId}) => {
         fetchUrl()
     },[])
 
+    if (!userInfo){
+            return
+        }
 
-    console.log(userInfo.friends)
+    const handlePostRequest = () => {
+
+    }
+
+
     const handleLogout = () => {
         history.push('/')
     }
@@ -27,8 +34,8 @@ const UserPage = ({userName, userId}) => {
         setCollapse((collapse) => !collapse)
     }
 
-    console.log(userInfo.profilePic)
-
+    //console.log(userInfo.profilePic)
+    console.log(userInfo)
     return (
         <div className="user-page-container">
             <div>
@@ -42,7 +49,7 @@ const UserPage = ({userName, userId}) => {
                 <div className="friends-container">
                     <div className="friend">
                         {/*for every friend a person has*/}
-                       {userInfo.friends.map((friend) => {
+                       {userInfo.playLists.map((friend, index) => {
                             return <p>{friend}</p>
                         })}
                         <p>{/*userInfo['friends']*/}</p>
