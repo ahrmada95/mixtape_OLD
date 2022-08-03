@@ -43,16 +43,6 @@ const MediaPlayer = ({ songInfo2 }) => {
         );
     }; 
 
-    const song = {
-        "id": 1,
-        "name": "Morning, Thinker",
-        "album": "THE ANSWER - Armored Core Tribute Album",
-        "albumArt": "./music/album_art/armored_core_tribute.jpg",
-        "artist": "Mattias Häggström Gerdt",
-        "currentTime": 223000,
-        "src": "./music/Morning, Thinker.mp3"
-      }
-
     return (
         <div className='media-player'>
             <div className='cover-slide-empty'>

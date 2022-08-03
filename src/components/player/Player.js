@@ -40,7 +40,7 @@ const Player = ({userId_, userName}) => {
 
     //console.log('UserPlayLists: ', userPlayLists)
 
-    console.log('songInfo2', songInfo2)
+    console.log('songInfo2', songInfo2.name)
 
 
     return (
@@ -48,6 +48,7 @@ const Player = ({userId_, userName}) => {
             <WebPlayer currPlayList={currPlayList} songInfo2={songInfo2}/>
             <Media userPlayLists={userPlayLists}
             setSongInfo2={setSongInfo2}
+            songInfo2={songInfo2.name}
             />
             <UserPage userId_={userId_} userName={userName}/>
         </div>

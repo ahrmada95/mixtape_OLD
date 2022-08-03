@@ -1,6 +1,6 @@
 import PlayListItem from "./PlayListItem";
 
-const PlayList = ({playList, userPlayLists, setSongInfo2, songInfo2}) => {
+const PlayList = ({userPlayLists, setSongInfo2}) => {
 
 
 
