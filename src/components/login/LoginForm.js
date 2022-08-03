@@ -2,10 +2,11 @@ import React, {useState, useEffect} from "react";
 import { useHistory } from "react-router-dom";
 import './login.css'
 
-const LoginForm = ({setUserId}) => {
+const LoginForm = ({setUserId, setUserName}) => {
     const [users, setUsers] = useState([]); //list of all users
     
     const history = useHistory();
+
 
     useEffect ( () => {
         const fetchData = async () => {
@@ -16,12 +17,16 @@ const LoginForm = ({setUserId}) => {
         fetchData();
     }, [])
 
-    //verification function that is case sensitive
+
+
+
+    //verification function that is case sensitive  
     const checkUser = (username, password) => {
         for (let a=0; a<users.length; a++){
             if(users[a]['username'] === username && users[a]['password'] === password){
                 console.log('true');
                 setUserId(users[a]['id']); //set user id
+                setUserName(users[a]['username'])
                 return true;
             }
         }
@@ -36,11 +41,10 @@ const LoginForm = ({setUserId}) => {
             console.log('true')
             history.push(`/player`)
             //valid login, route with appropriate id 
-        } /*else {
+        }else {
             alert('Invalid Username or Password');
             
-        }*/
-
+        }
         event.target['username'].value = '';
         event.target['password'].value = '';
     }
