@@ -4,7 +4,7 @@ import './login.css'
 
 const LoginForm = ({setUserId}) => {
     const [users, setUsers] = useState([]); //list of all users
-
+    
     const history = useHistory();
 
     useEffect ( () => {
@@ -36,10 +36,10 @@ const LoginForm = ({setUserId}) => {
             console.log('true')
             history.push(`/player`)
             //valid login, route with appropriate id 
-        } else {
+        } /*else {
             alert('Invalid Username or Password');
             
-        }
+        }*/
 
         event.target['username'].value = '';
         event.target['password'].value = '';

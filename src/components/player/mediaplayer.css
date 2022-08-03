@@ -6,13 +6,36 @@
     align-content: flex-end;
     background-color: black;
 }
-
+/*Use page css*/
 .user-page-container {
     height: 100%;
     width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
     background-image: linear-gradient(to bottom, #404040, #343239, #2a2430, #221627, #1d021d);
 }
 
+
+.friends-container{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(185, 100, 100);
+}
+
+.friend {
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+
+
+
+
+
+/*user page css */
 .media-container {
     display: flex;
     flex-direction: column;
