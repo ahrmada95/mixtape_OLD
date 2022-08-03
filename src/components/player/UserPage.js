@@ -20,10 +20,6 @@ const UserPage = ({userName, userId}) => {
             return
         }
 
-    const handlePostRequest = () => {
-
-    }
-
 
     const handleLogout = () => {
         history.push('/')
@@ -49,8 +45,8 @@ const UserPage = ({userName, userId}) => {
                 <div className="friends-container">
                     <div className="friend">
                         {/*for every friend a person has*/}
-                       {userInfo.playLists.map((friend, index) => {
-                            return <p>{friend}</p>
+                       {userInfo.friends.map((friend, index) => {
+                            return <p key={index}>{friend}</p>
                         })}
                         <p>{/*userInfo['friends']*/}</p>
                     </div>
