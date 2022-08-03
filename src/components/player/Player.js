@@ -5,7 +5,7 @@ import WebPlayer from './WebPlayer';
 import Media from './Media';
 import UserPage from './UserPage';
 
-const Player = ({userId_}) => { 
+const Player = ({userId_, userName}) => { 
     const [userId, setUserId] = useState()
     const [currSong, setCurrSong] = useState(0);
     const [currPlayListId, setCurrPlayListId] = useState(0);
@@ -14,7 +14,7 @@ const Player = ({userId_}) => {
 
     useEffect ( () => {
         const fetchPlayList = async() => {
-            const req = await fetch("http://localhost:4001/playlist/5");
+            const req = await fetch("http://localhost:4001/playlist/1");
             const res = await req.json();
             setCurrPlayList(res);
             console.log(res);
@@ -43,9 +43,9 @@ const Player = ({userId_}) => {
         <div className="body">
             <WebPlayer currPlayList={currPlayList}/>
             <Media userPlayLists={userPlayLists}/>
-            <UserPage />
+            <UserPage userName={userName} userId_={userId_}/>
         </div>
     )
 }
 
-export default Player;
+export default Player; 

@@ -2,26 +2,44 @@ import React, {useState, useEffect} from "react";
 import { useHistory } from "react-router-dom";
 import './login.css'
 
-const LoginForm = ({setUserId}) => {
+<<<<<<< Updated upstream
+const LoginForm = ({setUserId, setUserName}) => {
     const [users, setUsers] = useState([]); //list of all users
+    
+    const history = useHistory();
+
+
+    useEffect ( () => {
+=======
+const LoginForm = ({users, setUsers}) => {
+   // const [users, setUsers] = useState([]); //list of all users
 
     const history = useHistory();
 
-    useEffect ( () => {
+   /* useEffect ( () => {
+>>>>>>> Stashed changes
         const fetchData = async () => {
             const req = await fetch('http://localhost:4001/user/credentials/all');
             const res = await req.json();
             setUsers(res);
         }
         fetchData();
-    }, [])
+    }, [])*/
 
-    //verification function that is case sensitive
+
+
+
+    //verification function that is case sensitive  
     const checkUser = (username, password) => {
         for (let a=0; a<users.length; a++){
             if(users[a]['username'] === username && users[a]['password'] === password){
                 console.log('true');
+<<<<<<< Updated upstream
                 setUserId(users[a]['id']); //set user id
+                setUserName(users[a]['username'])
+=======
+                setUsers(users[a]['id']); //set user id
+>>>>>>> Stashed changes
                 return true;
             }
         }
@@ -36,11 +54,10 @@ const LoginForm = ({setUserId}) => {
             console.log('true')
             history.push(`/player`)
             //valid login, route with appropriate id 
-        } else {
+        }else {
             alert('Invalid Username or Password');
             
         }
-
         event.target['username'].value = '';
         event.target['password'].value = '';
     }
