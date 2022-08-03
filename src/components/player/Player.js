@@ -6,7 +6,7 @@ import Media from './Media';
 import UserPage from './UserPage';
 
 const Player = ({userId_}) => { 
-    const [userId, setUserId] = useState(userId_)
+    const [userId, setUserId] = useState()
     const [currSong, setCurrSong] = useState(0);
     const [currPlayListId, setCurrPlayListId] = useState(0);
     const [currPlayList, setCurrPlayList] = useState(null);
@@ -19,6 +19,13 @@ const Player = ({userId_}) => {
             setCurrPlayList(res);
             console.log(res);
         }
+         const fetchPlayList2 = async() => {
+            const req = await fetch(`http://localhost:4001/user/info/${userId_}`);
+            const res = await req.json();
+            setUserPlayLists(res);
+            console.log(res);
+        }
+        fetchPlayList2();
         fetchPlayList();
     }, [])
      
@@ -26,10 +33,16 @@ const Player = ({userId_}) => {
         return
     }
 
+
+    //console.log('UserPlayLists: ', userPlayLists)
+
+
+
+
     return (
         <div className="body">
             <WebPlayer currPlayList={currPlayList}/>
-            <Media />
+            <Media userPlayLists={userPlayLists}/>
             <UserPage />
         </div>
     )

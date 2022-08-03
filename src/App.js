@@ -15,7 +15,7 @@ function App() {
       <Login setUserId={setUserId}/>
       </Route>
       <Route exact path="/player">
-        <Player userId={user_id}/>
+        <Player userId_={user_id}/>
       </Route>
     </div>
   );

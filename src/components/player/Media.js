@@ -2,7 +2,11 @@ import "./mediaplayer.css"
 import "./media.css"
 import PlayList from "./PlayList";
 
-const Media = () => {
+const Media = ({ userPlayLists }) => {
+
+
+
+
     return (
         <div className="media-container">
             <div className="nav-container">
@@ -16,7 +20,7 @@ const Media = () => {
                 </div>
             </div>
             <div className="var-container">
-                <PlayList/>
+                <PlayList userPlayLists={userPlayLists}/>
             </div>
         </div>
     );

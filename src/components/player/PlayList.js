@@ -1,6 +1,11 @@
 import PlayListItem from "./PlayListItem";
 
-const PlayList = ({playList}) => {
+const PlayList = ({playList, userPlayLists}) => {
+
+
+
+
+
     return (
         <div id="playlist-title"> Your Tapes
             <br/>
@@ -9,7 +14,9 @@ const PlayList = ({playList}) => {
                 <img src='./assets/add_button.png' className="nav-icon-small"/> Create New
             </div>
         </div>
-            <PlayListItem />
+            {userPlayLists.playLists.map((playList, index) => {
+                return <PlayListItem key={index} playList={playList}/>    
+            })}
         </div>
     )
 }
