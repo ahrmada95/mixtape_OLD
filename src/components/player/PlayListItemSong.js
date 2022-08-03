@@ -1,8 +1,7 @@
 
 import { useEffect, useState } from "react"
-import MediaPlayer from "./MediaPlayer"
 
-const PlayListItemSong = ({ track, songInfo2, setSongInfo2 }) => {
+const PlayListItemSong = ({ track, setSongInfo2 }) => {
     const [songName, setSongName] = useState('')
     const [songInfo, setSongInfo] = useState({})
     //const [songInfo2, setSongInfo2] = useState([])

@@ -47,7 +47,7 @@ const Player = ({userId_, userName}) => {
         <div className="body">
             <WebPlayer currPlayList={currPlayList} songInfo2={songInfo2}/>
             <Media userPlayLists={userPlayLists}
-            songInfo2={songInfo2} setSongInfo2={setSongInfo2}
+            setSongInfo2={setSongInfo2}
             />
             <UserPage userId_={userId_} userName={userName}/>
         </div>
