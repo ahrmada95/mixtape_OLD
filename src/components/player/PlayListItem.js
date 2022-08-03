@@ -7,12 +7,13 @@ const PlayListItem = ({ playList }) => {
 
     const [playListName,setPlayListName] = useState([])
     const [playlistArray,setPlaylistArray] = useState([])
+    const [collapseSongList, setCollapseSongList] = useState(false)
 
     useEffect(() => {
         const fetchPlayistNames = async () => {
         let req = await fetch(`http://localhost:4001/playlist/${playList}`)
         let res = await req.json()
-        console.log('Somethingelse')
+        //console.log('Somethingelse')
         setPlayListName(res)
         setPlaylistArray(res.tracks)
     }
@@ -20,17 +21,21 @@ const PlayListItem = ({ playList }) => {
     
     },[])
    
+    const handleCollapse = () => {
+        setCollapseSongList((collapseSongList) => !collapseSongList)
+    }
 
-
-    console.log(playListName.tracks)
+    //console.log(playListName.tracks)
     return (
         <div className="playlist-items">
             <img src='./assets/tape_icon.png' className="nav-icon-tape"/>
-            <p>{playListName.name}</p>
-            <ul>
-                {playlistArray.map((track, index) => {
+            <p onClick={handleCollapse}>{playListName.name}</p>
+            <ul>{collapseSongList ? null : playlistArray.map((track, index) => {
                    return <PlayListItemSong key={index} track={track}/>
                 })}
+                {/*playlistArray.map((track, index) => {
+                   return <PlayListItemSong key={index} track={track}/>
+                })*/}
                 
             </ul>
         </div>

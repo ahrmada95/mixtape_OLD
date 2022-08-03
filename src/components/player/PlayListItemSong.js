@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 const PlayListItemSong = ({ track }) => {
     const [songName, setSongName] = useState('')
 
-    console.log('What AM I', track)
+    //console.log('What AM I', track)
     useEffect(() => {
         const fetchSongNames = async () => {
         let req = await fetch(`http://localhost:4001/music/${track}`)
