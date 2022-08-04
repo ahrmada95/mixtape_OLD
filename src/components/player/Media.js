@@ -1,6 +1,7 @@
 import "./mediaplayer.css"
 import "./media.css"
 import PlayList from "./PlayList";
+import MediaSearch from "./MediaSearch";
 import { useState, useEffect } from "react";
 
 const Media = ({ userPlayLists, setSongInfo2, setCurrPlayListId }) => {
@@ -25,7 +26,7 @@ const Media = ({ userPlayLists, setSongInfo2, setCurrPlayListId }) => {
     }, [])
 
 
-    //console.log(songInfo3)
+    console.log(songInfo3)
 
     const handleMediaPlayer = () => {
         setSongInfo2(songInfo3)
@@ -61,12 +62,12 @@ const Media = ({ userPlayLists, setSongInfo2, setCurrPlayListId }) => {
                 <div>
                     {collapse ? null : <input type="text" placeholder="search" value={search} onChange={(e) => setSearch(e.target.value)}/>}
                     {handleSearch.map((opt, index) => {
-                       return <p key={index} onClick={handleMediaPlayer}>{opt}</p>
+                       return <MediaSearch key={index} handleMediaPlayer={handleMediaPlayer} opt={opt}/>
                     })}
                 </div>
             </div>
             <div className="var-container">
-                <PlayList 
+                <PlayList
                 userPlayLists={userPlayLists} 
                 setSongInfo2={setSongInfo2}
                 setCurrPlayListId={setCurrPlayListId}
