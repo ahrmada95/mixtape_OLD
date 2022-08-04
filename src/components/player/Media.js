@@ -3,13 +3,12 @@ import "./media.css"
 import PlayList from "./PlayList";
 import { useState, useEffect } from "react";
 
-const Media = ({ userPlayLists, setSongInfo2 }) => {
+const Media = ({ userPlayLists, setSongInfo2, setCurrPlayListId }) => {
 
-    const someOptions = ['a','b','c']
     const [search, setSearch] = useState('')
-    const [collapse, setCollapse] = useState(false)
+    const [collapse, setCollapse] = useState(true)
     const [songInfoAll, setSongInfoAll] = useState([])
-
+    const [songInfo3, setSongInfo3] = useState({})
 
     useEffect ( () => {
         const fetchAllong = async() => {
@@ -26,12 +25,16 @@ const Media = ({ userPlayLists, setSongInfo2 }) => {
     }, [])
 
 
-    console.log(songInfoAll)
+    //console.log(songInfo3)
 
+    const handleMediaPlayer = () => {
+        setSongInfo2(songInfo3)
+        console.log('clicked', songInfo3)
+    }
 
     const handleCollapse = () => {
         setCollapse((collapse) => !collapse)
-        console.log(collapse)
+        //console.log(collapse)
     }
 
     const handleSearch = songInfoAll.filter((opt) => {
@@ -58,12 +61,16 @@ const Media = ({ userPlayLists, setSongInfo2 }) => {
                 <div>
                     {collapse ? null : <input type="text" placeholder="search" value={search} onChange={(e) => setSearch(e.target.value)}/>}
                     {handleSearch.map((opt, index) => {
-                       return <p key={index}>{opt}</p>
+                       return <p key={index} onClick={handleMediaPlayer}>{opt}</p>
                     })}
                 </div>
             </div>
             <div className="var-container">
-                <PlayList userPlayLists={userPlayLists} setSongInfo2={setSongInfo2}
+                <PlayList 
+                userPlayLists={userPlayLists} 
+                setSongInfo2={setSongInfo2}
+                setCurrPlayListId={setCurrPlayListId}
+                setSongInfo3={setSongInfo3}
                 />
             </div>
         </div>

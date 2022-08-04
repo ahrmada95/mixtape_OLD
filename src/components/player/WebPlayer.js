@@ -9,7 +9,7 @@ const WebPlayer = ({ currPlayList, songInfo2 }) => {
     return (
         <div className="web-player-container">
             <MediaPlayer songInfo2={songInfo2}/>
-            <Library currPlayList={currPlayList}/>
+            <Library currPlayList={currPlayList} />
         </div>
     ) 
 }

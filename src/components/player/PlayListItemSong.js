@@ -1,12 +1,11 @@
 
 import { useEffect, useState } from "react"
 
-const PlayListItemSong = ({ track, setSongInfo2 }) => {
+const PlayListItemSong = ({ track, setSongInfo2, setSongInfo3 }) => {
     const [songName, setSongName] = useState('')
     const [songInfo, setSongInfo] = useState({})
     //const [songInfo2, setSongInfo2] = useState([])
-
-
+    
     //console.log('What AM I', track)
     useEffect(() => {
         const fetchSongNames = async () => {
@@ -15,6 +14,7 @@ const PlayListItemSong = ({ track, setSongInfo2 }) => {
         //console.log('Somethingelse', res)
         setSongName(res.name)
         setSongInfo(res)
+        setSongInfo3(res)
         //setSongInfo()
     }
     fetchSongNames()
@@ -24,7 +24,7 @@ const PlayListItemSong = ({ track, setSongInfo2 }) => {
     
 
 
-    const handleMediaPlayer = () => {
+    const handleMediaPlayer2 = () => {
         setSongInfo2(songInfo)
     }
 
@@ -32,7 +32,7 @@ const PlayListItemSong = ({ track, setSongInfo2 }) => {
     //console.log(songInfo)
     return (
         <div>
-        <li onClick={handleMediaPlayer}>{songName}</li>
+        <li onClick={handleMediaPlayer2}>{songName}</li>
         </div>
     )
 }
