@@ -13,8 +13,8 @@ const Player = ({userId_, userName}) => {
     const [userPlayLists, setUserPlayLists] = useState([]);
     const [songInfo2, setSongInfo2] = useState([])
 
-    console.log(currPlayListId)
-    //console.log(currPlayList)
+    //console.log(currPlayListId)
+    console.log('WHat is this paylist: ', currPlayList)
 
     useEffect ( () => {
         const fetchPlayList = async() => {

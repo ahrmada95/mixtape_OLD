@@ -1,13 +1,31 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PlayListItem from "./PlayListItem";
 
 const PlayList = ({ userPlayLists, setSongInfo2, setCurrPlayListId, setSongInfo3 }) => {
 
+    ///////////////////////////////////////////////////////////////////////////////
+    //POST REQUEST
+    const [playlisAll, setPLaylistAll] = useState([])
+    useEffect(() => {
+        const fetchPlaylistAll = async () => {
+        let req = await fetch(`http://localhost:4001/playlist/all`)
+        let res = await req.json()
+        setPLaylistAll(res)
+    }
+    fetchPlaylistAll()
+    
+    },[])
+
 
     const [newList, setNewList] = useState({
         name: '',
-        tracks: '',
-    })
+        tracks: [''],
+    }) 
+
+
+    const addNewTrack = (newTrack) => {
+    setPLaylistAll([...playlisAll, newTrack])
+    }
 
 
     const handleSubmit = (e) => {
@@ -20,12 +38,13 @@ const PlayList = ({ userPlayLists, setSongInfo2, setCurrPlayListId, setSongInfo3
             body: JSON.stringify(newList)
         })
         .then(req => req.json())
-        .then(data => console.log(data))
+        .then((data) => addNewTrack(data))
     }
+    
 
-
-
-
+    const handleOnChange = (e) => {
+        setNewList({...newList, [e.target.name] : e.target.value})
+    }
 
 
     return (
@@ -36,8 +55,8 @@ const PlayList = ({ userPlayLists, setSongInfo2, setCurrPlayListId, setSongInfo3
                 <img src='./assets/add_button.png' className="nav-icon-small"/> Create New
             </div>
             <form onSubmit={handleSubmit}>
-                <input type="text" name="title" placeholder="your track title"/>
-                <input type="text" name="tracks" placeholder="add songs"/><br />
+                <input type="text" name="title" placeholder="your track title" onChange={handleOnChange}/>
+                <input type="text" name="tracks" placeholder="add songs" onChange={handleOnChange}/><br />
                 <input type="submit" />
                 </form>
         </div>
