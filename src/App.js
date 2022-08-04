@@ -3,6 +3,10 @@ import { Route, Switch }  from "react-router-dom";
 
 import Login from "./components/login/Login";
 import Player from "./components/player/Player";
+
+localStorage.setItem('userID', '2')
+
+
 function App() {
   const [user_id, setUserId] = useState(0);
   const [userName, setUserName] = useState('') /* addition */

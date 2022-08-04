@@ -7,6 +7,8 @@ import LoginForm from "./LoginForm";
 import Forgot from "./Forgot";
 
 const Login = ({setUserId, setUserName}) => {
+    console.log(localStorage.getItem('userID'))
+
     return (
         <div className="background">
             <LoginVideo />

@@ -16,9 +16,18 @@ const Media = ({ userPlayLists, setSongInfo2 }) => {
             const req = await fetch("http://localhost:4001/music/all");
             const res = await req.json(); 
 
+            let val = []
+            for(let i = 0; i < res.length; i++){
+                val.push(res[i].name)
+            }
+            return setSongInfoAll(val)
         }
         fetchAllong()
     }, [])
+
+
+    console.log(songInfoAll)
+
 
     const handleCollapse = () => {
         setCollapse((collapse) => !collapse)
@@ -32,6 +41,8 @@ const Media = ({ userPlayLists, setSongInfo2 }) => {
             return opt.includes(search)
         }
     })
+
+
 
     return (
         <div className="media-container">
