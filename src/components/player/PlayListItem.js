@@ -3,7 +3,7 @@ import { useState,useEffect } from "react";
 import PlayListItemSong from "./PlayListItemSong";
 import PlayList from "./PlayList";
 
-const PlayListItem = ({ playList, setSongInfo2, setCurrPlayListId, setSongInfo3 }) => {
+const PlayListItem = ({ playList, setSongInfo2, setCurrPlayListId }) => {
 
 
     const [playListName,setPlayListName] = useState([])
@@ -39,12 +39,10 @@ const PlayListItem = ({ playList, setSongInfo2, setCurrPlayListId, setSongInfo3 
             <p onClick={handlePlayListId}>{playListName.name}</p>
             <ul>{collapseSongList ? null : playlistArray.map((track, index) => {
                    return <PlayListItemSong onClick={setCurrPlayListId}
-                   key={index} track={track} setSongInfo2={setSongInfo2} setSongInfo3={setSongInfo3}
+                   key={index} track={track} setSongInfo2={setSongInfo2} 
+                   
                    />
                 })}
-                {/*playlistArray.map((track, index) => {
-                   return <PlayListItemSong key={index} track={track}/>
-                })*/}
                 
             </ul>
         </div>

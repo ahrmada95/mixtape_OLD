@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import { Route, Switch }  from "react-router-dom";
+import { Route }  from "react-router-dom";
 
 import Login from "./components/login/Login";
 import Player from "./components/player/Player";

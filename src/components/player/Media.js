@@ -9,7 +9,7 @@ const Media = ({ userPlayLists, setSongInfo2, setCurrPlayListId }) => {
     const [search, setSearch] = useState('')
     const [collapse, setCollapse] = useState(true)
     const [songInfoAll, setSongInfoAll] = useState([])
-    const [songInfo3, setSongInfo3] = useState({})
+
 
     useEffect ( () => {
         const fetchAllong = async() => {
@@ -18,7 +18,7 @@ const Media = ({ userPlayLists, setSongInfo2, setCurrPlayListId }) => {
 
             let val = []
             for(let i = 0; i < res.length; i++){
-                val.push(res[i].name)
+                val.push(res[i])
             }
             return setSongInfoAll(val)
         }
@@ -26,12 +26,7 @@ const Media = ({ userPlayLists, setSongInfo2, setCurrPlayListId }) => {
     }, [])
 
 
-    console.log(songInfo3)
 
-    const handleMediaPlayer = () => {
-        setSongInfo2(songInfo3)
-        console.log('clicked', songInfo3)
-    }
 
     const handleCollapse = () => {
         setCollapse((collapse) => !collapse)
@@ -62,7 +57,7 @@ const Media = ({ userPlayLists, setSongInfo2, setCurrPlayListId }) => {
                 <div>
                     {collapse ? null : <input type="text" placeholder="search" value={search} onChange={(e) => setSearch(e.target.value)}/>}
                     {handleSearch.map((opt, index) => {
-                       return <MediaSearch key={index} handleMediaPlayer={handleMediaPlayer} opt={opt}/>
+                       return <MediaSearch key={index} opt={opt}/>
                     })}
                 </div>
             </div>
@@ -71,7 +66,7 @@ const Media = ({ userPlayLists, setSongInfo2, setCurrPlayListId }) => {
                 userPlayLists={userPlayLists} 
                 setSongInfo2={setSongInfo2}
                 setCurrPlayListId={setCurrPlayListId}
-                setSongInfo3={setSongInfo3}
+
                 />
             </div>
         </div>

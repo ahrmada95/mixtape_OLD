@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from "react"
 
-const PlayListItemSong = ({ track, setSongInfo2, setSongInfo3 }) => {
+const PlayListItemSong = ({ track, setSongInfo2 }) => {
     const [songName, setSongName] = useState('')
     const [songInfo, setSongInfo] = useState({})
     //const [songInfo2, setSongInfo2] = useState([])
@@ -14,7 +14,6 @@ const PlayListItemSong = ({ track, setSongInfo2, setSongInfo3 }) => {
         //console.log('Somethingelse', res)
         setSongName(res.name)
         setSongInfo(res)
-        setSongInfo3(res)
         //setSongInfo()
     }
     fetchSongNames()

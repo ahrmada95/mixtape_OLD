@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import PlayListItem from "./PlayListItem";
 
-const PlayList = ({ userPlayLists, setSongInfo2, setCurrPlayListId, setSongInfo3 }) => {
+const PlayList = ({ userPlayLists, setSongInfo2, setCurrPlayListId }) => {
 
     ///////////////////////////////////////////////////////////////////////////////
     //POST REQUEST
@@ -65,7 +65,6 @@ const PlayList = ({ userPlayLists, setSongInfo2, setCurrPlayListId, setSongInfo3
                 playList={playList} 
                 setSongInfo2={setSongInfo2}
                 setCurrPlayListId={setCurrPlayListId}
-                setSongInfo3={setSongInfo3}
                 />
             })}
         </div>
