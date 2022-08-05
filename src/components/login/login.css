@@ -181,3 +181,14 @@ input[type=text], input[type=password] {
     font-family: form-label;
     font-size: 18px;
 }
+
+.user-info-img{
+    width: 250px;
+    border: #ffffff;
+    border-color: #ffffff;
+    border-image-width: 100px;
+}
+
+.user-ingo-logout{
+    top: 0px;
+}

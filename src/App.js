@@ -1,8 +1,9 @@
-import React, {useState, useEffect} from "react";
-import { Route, Switch }  from "react-router-dom";
+import React, {useState} from "react";
+import { Route }  from "react-router-dom";
 
 import Login from "./components/login/Login";
 import Player from "./components/player/Player";
+import UserInfo from './components/userinfo/UserInfo'
 
 localStorage.setItem('userID', '2')
 
@@ -27,6 +28,9 @@ console.log(userName)
       </Route>
       <Route exact path="/player">
         <Player userId_={user_id} userName={userName}/>
+      </Route>
+      <Route exact path="/userinfo">
+        <UserInfo userName={userName}/>
       </Route>
     </div>
   );

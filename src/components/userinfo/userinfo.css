@@ -1,0 +1,97 @@
+.userinfo-container {
+    display: flex;
+    height: 100vh;
+    gap: 40px;
+    background-image: linear-gradient(to bottom, #404040, #343239, #2a2430, #221627, #1d021d);
+    color: white;
+}
+
+.user-song-covers {
+    display:flex;
+    justify-content: end;
+    flex-wrap: wrap;
+    width: calc(205px * 4);
+    gap: 5px;
+    width: 65%;
+    background-image: linear-gradient(to bottom, #404040, #343239, #2a2430, #221627, #1d021d);  
+    padding: 50px 50px 50px 0;
+    overflow: hidden;
+}
+
+
+.user-info  {
+    background-color: rgb(29, 150, 39);
+    width: 35%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(to bottom, #404040, #343239, #2a2430, #221627, #1d021d);
+
+    align-items: center;
+}
+
+
+.song-cover{
+    width: 160px;
+    height: auto;
+    
+}
+.song-cover:hover{
+  cursor: pointer;
+  transform: scale(1.07)
+}
+
+
+.user-info-name {
+    font-family: banner-title;
+    color: white;
+    font-size: 40px;
+    margin: 0;
+}
+
+.logout-btn {
+    transition-duration: 0.2s;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 5px;
+    border: none;
+    font-family: banner-title;
+    color: #ffffff;
+    font-size: 15px;
+    background: #392d4c;
+    padding: 5px 10px 5px 10px;
+    text-decoration: none;
+    width: 150px;
+    height: 50px;
+    margin-top: 50px;
+    cursor: pointer;
+}
+  
+.logout-btn:hover {
+    transition-duration: 0.2s;
+    background: #226294;
+    text-decoration: none;
+    color: rgba(165, 58, 2412, 1);
+}
+
+.user-ingo-logout{
+    margin: auto auto 30px auto;
+}
+
+.user-info-img{
+    width: 250px;
+    border: #ffffff;
+    padding:2px 2px 0 2px;
+    box-shadow: yellow;
+}
+
+.user-info-img-container{
+    background-color: #ffffff;
+}
+
+
+.playlist {
+    margin-top:50px ;
+    font-size: 20px;
+    font-family: banner-title;
+}

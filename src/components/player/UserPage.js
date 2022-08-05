@@ -24,7 +24,9 @@ const UserPage = ({userName, userId_}) => {
     const handleLogout = () => {
         history.push('/')
     }
-
+    const handleUserInfoPageShift = () => {
+        history.push('/userinfo')
+    }
 
     const handleCollapse = () => {
         setCollapse((collapse) => !collapse)
@@ -38,7 +40,7 @@ const UserPage = ({userName, userId_}) => {
                 <h1>Welcome {userName}</h1>
             </div>
             <div>
-                <img src={userInfo.profilePic} alt="" />
+                <img src={userInfo.profilePic="https://media.wired.com/photos/598e35fb99d76447c4eb1f28/master/pass/phonepicutres-TA.jpg"} alt="" width='250px' height='auto' onClick={handleUserInfoPageShift}/>
             </div>
             <div>
                 <h3>friends</h3>
