@@ -8,6 +8,7 @@ const Media = ({ userPlayLists, setSongInfo2, setCurrPlayListId }) => {
 
     const [search, setSearch] = useState('')
     const [collapse, setCollapse] = useState(true)
+    
     const [songInfoAll, setSongInfoAll] = useState([])
     const [songInfo3, setSongInfo3] = useState({})
 
@@ -38,14 +39,15 @@ const Media = ({ userPlayLists, setSongInfo2, setCurrPlayListId }) => {
         //console.log(collapse)
     }
 
+   
+
     const handleSearch = songInfoAll.filter((opt) => {
         if(search === '') {
             return false
         } else {
-            return opt.includes(search)
+            return opt.toLowerCase().includes(search.toLowerCase())
         }
     })
-
 
 
     return (
@@ -58,9 +60,10 @@ const Media = ({ userPlayLists, setSongInfo2, setCurrPlayListId }) => {
                 <div id="search-option" onClick={handleCollapse}>
                     <img src='./assets/search_icon.png' className="nav-icon"/>
                     Search
+                    
                 </div>
-                <div>
-                    {collapse ? null : <input type="text" placeholder="search" value={search} onChange={(e) => setSearch(e.target.value)}/>}
+                <div className="userpage-button-search-container">
+                    {collapse ? null : <input type="text" placeholder="search" value={search} className="userpage-button-search" onChange={(e) => setSearch(e.target.value)}/>}
                     {handleSearch.map((opt, index) => {
                        return <MediaSearch key={index} handleMediaPlayer={handleMediaPlayer} opt={opt}/>
                     })}

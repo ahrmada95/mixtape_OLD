@@ -11,7 +11,7 @@ const Player = ({userId_, userName}) => {
     const [currPlayListId, setCurrPlayListId] = useState(2);
     const [currPlayList, setCurrPlayList] = useState(null);
     const [userPlayLists, setUserPlayLists] = useState([]);
-    const [songInfo2, setSongInfo2] = useState([])
+    const [songInfo2, setSongInfo2] = useState(JSON.parse(localStorage.getItem('defaultSong_')))
 
     //console.log(currPlayListId)
     console.log('WHat is this paylist: ', currPlayList)

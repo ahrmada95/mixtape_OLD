@@ -6,6 +6,8 @@ const PlayList = ({ userPlayLists, setSongInfo2, setCurrPlayListId, setSongInfo3
     ///////////////////////////////////////////////////////////////////////////////
     //POST REQUEST
     const [playlisAll, setPLaylistAll] = useState([])
+    const [collapseCreate, setCollapseCreate] = useState(true)
+
     useEffect(() => {
         const fetchPlaylistAll = async () => {
         let req = await fetch(`http://localhost:4001/playlist/all`)
@@ -44,6 +46,13 @@ const PlayList = ({ userPlayLists, setSongInfo2, setCurrPlayListId, setSongInfo3
 
     const handleOnChange = (e) => {
         setNewList({...newList, [e.target.name] : e.target.value})
+        console.log('clicked')
+    }
+
+
+     const handleCollapseCreate = () => {
+        setCollapseCreate((collapseCreate) => !collapseCreate)
+        console.log(collapseCreate)
     }
 
 
@@ -52,13 +61,14 @@ const PlayList = ({ userPlayLists, setSongInfo2, setCurrPlayListId, setSongInfo3
             <br/>
             <div className="playlist-items">
             <div id='add-new'>
-                <img src='./assets/add_button.png' className="nav-icon-small"/> Create New
+                <img src='./assets/add_button.png' className="nav-icon-small" onClick={handleCollapseCreate}/> Create New
             </div>
-            <form onSubmit={handleSubmit}>
-                <input type="text" name="title" placeholder="your track title" onChange={handleOnChange}/>
-                <input type="text" name="tracks" placeholder="add songs" onChange={handleOnChange}/><br />
-                <input type="submit" />
-                </form>
+            {collapseCreate ? null : <form>
+                <input type="text" name="title" placeholder="your track title" className="userpage-button" onChange={handleOnChange}/>
+                <input type="text" name="tracks" placeholder="add songs"  className="userpage-button" onChange={handleOnChange}/><br />
+                <input type="submit" className="userpage-button" />
+                </form>}
+    
         </div>
             {userPlayLists.map((playList, index) => {
                 return <PlayListItem key={index} 

@@ -20,13 +20,11 @@
 
 
 .user-info  {
-    background-color: rgb(29, 150, 39);
     width: 35%;
     height: 100vh;
     display: flex;
     flex-direction: column;
     background-image: linear-gradient(to bottom, #404040, #343239, #2a2430, #221627, #1d021d);
-
     align-items: center;
 }
 
@@ -43,6 +41,7 @@
 
 
 .user-info-name {
+    display: flex;
     font-family: banner-title;
     color: white;
     font-size: 40px;
@@ -94,4 +93,17 @@
     margin-top:50px ;
     font-size: 20px;
     font-family: banner-title;
+}
+
+.player-container {
+    margin: 100px auto auto auto;
+
+}
+
+.media-controls-2 {
+    margin: 200px auto auto auto;
+}
+
+.selected-album-cover{
+    width: auto;
 }

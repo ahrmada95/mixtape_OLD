@@ -1,17 +1,22 @@
 import { useState } from "react"
+import { useHistory } from "react-router-dom"
+
 
 const SongCoverImage = ({ songCover }) => {
-
+    const history = useHistory()
     const [flip, setFlip] = useState(false)
 
     const handleFlip = () => {
         setFlip((flip) => !flip)
-        console.log(flip)
+        //console.log(flip)
     }
 
     return (
-       
-            <img src={`${songCover.albumArt}`} alt="song cover" className="song-cover" onClick={handleFlip}/>
+        <div>
+            <img src={`${songCover.albumArt}`} alt="song cover" className="song-cover" 
+            onClick={() => {handleFlip(); history.push('/player') }} />
+        </div>
+            
     
     )
 }

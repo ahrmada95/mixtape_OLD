@@ -1,10 +1,11 @@
 .body {
     height: 100vh;
-    width: 100vw;
+    width: 100wh;
     display: flex;
     flex-direction: row;
     align-content: flex-end;
     background-color: black;
+    overflow: hidden;
 }
 /*Use page css*/
 .user-page-container {
@@ -12,8 +13,10 @@
     width: 300px;
     display: flex;
     flex-direction: column;
-    align-content: center;
+    align-items: center;
     background-image: linear-gradient(to bottom, #404040, #343239, #2a2430, #221627, #1d021d);
+    gap: 40px;
+    color: white;
 }
 
 
@@ -21,19 +24,77 @@
     display: flex;
     flex-direction: column;
     background-color: rgb(185, 100, 100);
-}
-
-.friend {
-  
+    display: none;
 }
 
 
 
+.userpage-button {
+    transition-duration: 0.2s;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 5px;
+    border: none;
+    font-family: banner-title;
+    color: #ffffff;
+    font-size: 15px;
+    background: #392d4c;
+    padding: 5px 10px 5px 10px;
+    text-decoration: none;
+    width: 150px;
+    height: 50px;
+    margin: auto auto 2% auto;
+    cursor: pointer;
+}
 
 
+#root > div > div > div.media-container > div.nav-container > div.userpage-button-search-container > p{
+    color: white;
+
+    transition-duration: 0.5s;
+}
 
 
+.userpage-button-search {
+    transition-duration: 0.2s;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 5px;
+    border: none;
+    font-family: banner-title;
+    color: #ffffff;
+    font-size: 15px;
+    background: #392d4c;
+    padding: 5px 10px 5px 10px;
+    text-decoration: none;
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    margin-left: 30px;
+}
+.userpage-button-search-container {
+    margin-left: 30px;
+}
 
+.userpage-button-container {
+    margin: auto auto 100px auto;
+}
+
+.userpage-button:hover {
+    transition-duration: 0.2s;
+    background: #226294;
+    text-decoration: none;
+    color: rgba(165, 58, 2412, 1);
+}
+
+#root > div > div > div.user-page-container > div:nth-child(1) > h1 {
+    font-size: 60px;
+}
+
+
+.userpage-image{
+    box-shadow: white 1px 1px 2px 2px;
+}
 /*user page css */
 .media-container {
     display: flex;

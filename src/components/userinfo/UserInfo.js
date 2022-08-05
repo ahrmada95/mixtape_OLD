@@ -3,6 +3,7 @@ import SongCoverImage from './songCoverImage'
 import { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 
+
 const UserInfo = ({ userName }) => {
 
     const history = useHistory()
@@ -23,7 +24,7 @@ const UserInfo = ({ userName }) => {
         }
         fetchUrlSongCovers()
     },[])
-    console.log(songsInfo);
+    //console.log(songsInfo);
 
     return(
         <div className='userinfo-container'>
@@ -41,6 +42,15 @@ const UserInfo = ({ userName }) => {
                 </div>
                 <div className='playlist'>
                     Create Playlist
+                </div>
+                <div className='player-container'>
+                    <div className='media-controls-2'>
+                    <span>
+                        <button className='prev-btn' >◄◄</button>
+                        <button className='play-btn' >►</button> {/*we will use state to change class and content dynamically*/}
+                        <button className='next-btn' >►►</button>
+                    </span>
+                </div>
                 </div>
                 <div className='user-ingo-logout'>
                     <button onClick={() => history.push('/')} className="logout-btn">Logout</button>

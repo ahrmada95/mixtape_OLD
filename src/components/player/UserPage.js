@@ -39,11 +39,11 @@ const UserPage = ({userName, userId_}) => {
             <div>
                 <h1>Welcome {userName}</h1>
             </div>
-            <div>
-                <img src={userInfo.profilePic="https://media.wired.com/photos/598e35fb99d76447c4eb1f28/master/pass/phonepicutres-TA.jpg"} alt="" width='250px' height='auto' onClick={handleUserInfoPageShift}/>
+            <div className="userpage-image" >
+                <img src={userInfo.profilePic} alt="" className='user-info-img' onClick={handleUserInfoPageShift}/>
             </div>
             <div>
-                <h3>friends</h3>
+                <h3>Friends</h3>
                 <div className="friends-container">
                     <div className="friend">
                         {/*for every friend a person has*/}
@@ -54,12 +54,13 @@ const UserPage = ({userName, userId_}) => {
                     </div>
                 </div>
             </div>
-            <div>
-                <button onClick={handleCollapse}>add new friend</button>
-                {collapse ? <input type="text" name="search" placeholder="search friend" /> : null }
+            <div >
+                <button onClick={handleCollapse} className="userpage-button">Add New Friend</button>
+                
             </div>
-            <div>
-                <button onClick={handleLogout}>Logout</button>
+            {collapse ? <input type="text" name="search" placeholder="search friend" className="userpage-button" /> : null }
+            <div className="userpage-button-container">
+                <button onClick={handleLogout} className="userpage-button">Logout</button>
             </div>
         </div>
     )
