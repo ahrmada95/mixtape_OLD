@@ -31,7 +31,9 @@ const UserInfo = ({ userName }) => {
             <div className='user-song-covers'>
                 {songsInfo.map((songCover, index) => {
                     return <SongCoverImage key={index} songCover={songCover} />
+                    
                 })}
+                
             </div>
             <div className="user-info">
                 <div className='user-info-name'>

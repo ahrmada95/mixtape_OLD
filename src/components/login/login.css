@@ -113,6 +113,7 @@ h1 {
     height: 75px;
     margin-top: 50px;
     cursor: pointer;
+    border-radius: 5px;
 }
   
 .login-btn:hover {

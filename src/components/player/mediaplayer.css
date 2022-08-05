@@ -94,6 +94,7 @@
 
 .userpage-image{
     box-shadow: white 1px 1px 2px 2px;
+    cursor: pointer;
 }
 /*user page css */
 .media-container {
@@ -301,4 +302,9 @@
 
 #scrubber::-webkit-slider-thumb {
     background-color: red;
+  }
+
+  li {
+    list-style: none;
+
   }

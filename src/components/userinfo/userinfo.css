@@ -32,7 +32,8 @@
 .song-cover{
     width: 160px;
     height: auto;
-    
+    border-radius: 5px;
+    overflow: hidden;
 }
 .song-cover:hover{
   cursor: pointer;
@@ -106,4 +107,20 @@
 
 .selected-album-cover{
     width: auto;
+}
+
+.player-bg{
+    position: relative;
+  transform-style: preserve-3d;
+  transition: .6s .1s;
+}
+
+.song-cover{
+    position: relative;
+  transform-style: preserve-3d;
+  transition: .6s .1s;
+}
+
+.test {
+    
 }
